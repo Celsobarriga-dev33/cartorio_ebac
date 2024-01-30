@@ -1,7 +1,7 @@
-#include <stdio.h> //biblioteca de comunicação com o usuário
-#include <stdlib.h> //biblioteca de alocação de espaço em memória
-#include <locale.h> //biblioteca de alocações de texto por região
-#include <string.h> //biblioteca responsável por cuidar das string
+#include <stdio.h> //biblioteca de comunicaÃ§Ã£o com o usuÃ¡rio
+#include <stdlib.h> //biblioteca de alocaÃ§Ã£o de espaÃ§o em memÃ³ria
+#include <locale.h> //biblioteca de alocaÃ§Ãµes de texto por regiÃ£o
+#include <string.h> //biblioteca responsÃ¡vel por cuidar das string
 		
 int registro()
 {
@@ -76,12 +76,12 @@ int consulta()
 	  	
 	if(file == NULL)
 	{
-		printf("N�o foi possivel abrir o arquivo, n�o localizado!.\n");
+		printf("Não foi possivel abrir o arquivo, não localizado!.\n");
 	}
 		
 	while(fgets(conteudo, 100, file) != NULL)
 	{
-		printf("\n Essas s�o as informa��es do usu�rio: ");
+		printf("\n Essas são as informações do usuário: ");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -91,15 +91,25 @@ int consulta()
 
 int deletar()
 {
-	printf("Voce escolheu deletar nomes!\n");
-	system("pause");	
+	char cpf[40];
+
+	printf("Digite o CPF do usuário a ser deletado: ");
+	scanf("%s", cpf);
+
+	remove(cpf);
+
+	FILE * file;
+	file = fopen(cpf, "r");
+
+	if(file == NULL) {
+		printf("Voce escolheu deletar nomes!\n");
+		system("pause");	
+	}
 }
 
-
-	
 int main()
 	{
-	int opcao=0; //Definindo vari�veis
+	int opcao=0; //Definindo variáveis
 	int laco=1;
 	
 	for(laco=1;laco=1;)
@@ -109,18 +119,18 @@ int main()
 
 		setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
 			
-		printf("### Cart�rio da EBAC ###\n\n"); //inicio do menu
-		printf("Escolha a op��o desejada do menu\n\n");
+		printf("### Cartório da EBAC ###\n\n"); //inicio do menu
+		printf("Escolha a opção desejada do menu\n\n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
 		printf("\t3 - Deletar nomes\n\n"); 
-		printf("Op��o: ");//fim do menu
+		printf("Opção: ");//fim do menu
 				
-		scanf("%d", &opcao); //armazenando a escolha do usu�rio
+		scanf("%d", &opcao); //armazenando a escolha do usuário
 		
 		system("cls");
 	
-		switch(opcao) //inicio da sele��o
+		switch(opcao) //inicio da seleção
 		{
 			case 1:
 			registro();
@@ -135,10 +145,10 @@ int main()
 			break;
 		
 			default:
-			printf("Essa op��o n�o est� disponivel!\n");
+			printf("Essa opção não está disponivel!\n");
 			system("pause");
 			break;
-		} //fim da sele��o
+		} //fim da seleção
 			
 	}	
 }
