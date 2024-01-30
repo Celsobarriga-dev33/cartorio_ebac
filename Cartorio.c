@@ -3,8 +3,8 @@
 #include <locale.h> //biblioteca de alocação de textos por região
 #include <string.h> //biblioteca responsável por cuidar das string
 		
-int registro()
-{
+int registro() {
+	
 	char arquivo[40];
 	char cpf[40];
 	char nome[40];
@@ -58,10 +58,7 @@ int registro()
 
 }
 
-
-
-int consulta() 
-{
+int consulta() {	
 	
 	setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
 		
@@ -89,8 +86,8 @@ int consulta()
 	system ("pause");	
 }
 
-int deletar()
-{
+int deletar() {
+	
 	char cpf[40];
 
 	printf("Digite o CPF do usuário a ser deletado: ");
@@ -107,10 +104,10 @@ int deletar()
 	}
 }
 
-int main()
-	{
-	int opcao=0; //Definindo variáveis
-	int laco=1;
+int main() {
+	
+	int opcao = 0; //Definindo variáveis
+	int laco = 1;
 	
 	for(laco=1;laco=1;)
 	{
@@ -123,17 +120,18 @@ int main()
 		printf("Escolha a opção desejada do menu\n\n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n"); 
+		printf("\t3 - Deletar nomes\n"); 
+		printf("\t4 - Sair do sistema\n\n"); 
 		printf("Opção: ");//fim do menu
 				
 		scanf("%d", &opcao); //armazenando a escolha do usuário
 		
-		system("cls");
+		system("cls"); //responsavel por limpar a tela
 	
 		switch(opcao) //inicio da seleção
 		{
 			case 1:
-			registro();
+			registro(); //chama de funções
 			break;
 			
 			case 2:
@@ -143,12 +141,16 @@ int main()
 			case 3:
 			deletar();
 			break;
+			
+			case 4:
+			printf("Obrigado por utilizar o sistema.\n");
+			return 0;
+			break;
 		
 			default:
 			printf("Essa opção não está disponivel!\n");
 			system("pause");
 			break;
-		} //fim da seleção
-			
+		} //fim da seleção	
 	}	
 }
