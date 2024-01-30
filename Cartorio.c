@@ -54,8 +54,7 @@ int registro() {
 	fprintf(file,cargo);
 	fclose(file);	
 	
-    system("pause");
-
+    	system("pause");
 }
 
 int consulta() {	
@@ -71,13 +70,11 @@ int consulta() {
 	FILE *file;
 	file = fopen(cpf,"r"); //usamos o "r" quando queremos ler um arquivo 
 	  	
-	if(file == NULL)
-	{
+	if(file == NULL) {
 		printf("Não foi possivel abrir o arquivo, não localizado!.\n");
 	}
 		
-	while(fgets(conteudo, 100, file) != NULL)
-	{
+	while(fgets(conteudo, 100, file) != NULL) {
 		printf("\n Essas são as informações do usuário: ");
 		printf("%s", conteudo);
 		printf("\n\n");
@@ -109,8 +106,7 @@ int main() {
 	int opcao = 0; //Definindo variáveis
 	int laco = 1;
 	
-	for(laco=1;laco=1;)
-	{
+	for(laco=1;laco=1;) {
 
 		system("cls");
 
@@ -128,8 +124,7 @@ int main() {
 		
 		system("cls"); //responsavel por limpar a tela
 	
-		switch(opcao) //inicio da seleção
-		{
+		switch(opcao) { //inicio da seleção
 			case 1:
 			registro(); //chama de funções
 			break;
