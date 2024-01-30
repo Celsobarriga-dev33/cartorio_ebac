@@ -1,7 +1,7 @@
-#include <stdio.h> //biblioteca de comunicaÃ§Ã£o com o usuÃ¡rio
-#include <stdlib.h> //biblioteca de alocaÃ§Ã£o de espaÃ§o em memÃ³ria
-#include <locale.h> //biblioteca de alocaÃ§Ãµes de texto por regiÃ£o
-#include <string.h> //biblioteca responsÃ¡vel por cuidar das string
+#include <stdio.h> //biblioteca de comunicação com o usuário
+#include <stdlib.h> //biblioteca de alocação de espaços de memória
+#include <locale.h> //biblioteca de alocação de textos por região
+#include <string.h> //biblioteca responsável por cuidar das string
 		
 int registro()
 {
